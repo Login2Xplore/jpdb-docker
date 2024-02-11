@@ -55,7 +55,7 @@ if [ -f "jpdb-setup.sh" ]
 then
 echo "jpdb-setup.sh file exists"
 else
-wget https://raw.githubusercontent.com/GargParas/JPDB/main/jpdb-setup.sh
+wget https://raw.githubusercontent.com/Login2Xplore/jpdb-docker/main/jpdb-setup.sh
 chmod 755 jpdb-setup.sh
 fi
 
