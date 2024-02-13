@@ -19,7 +19,8 @@ fi
 folderName="jpdb${1}"
 echo "${folderName}"
 
-cd $home
+# cd $home
+cd /opt
 mkdir $folderName
 cd $folderName
 
