@@ -21,7 +21,7 @@ echo "${folderName}"
 
 # cd $home
 cd /opt
-mkdir $folderName
+sudo mkdir $folderName
 cd $folderName
 
 if [ -f "jpdb-setup.sh" ]
