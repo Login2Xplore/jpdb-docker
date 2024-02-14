@@ -19,7 +19,6 @@ fi
 folderName="jpdb${1}"
 echo "${folderName}"
 
-# cd $home
 cd /opt
 sudo mkdir $folderName
 cd $folderName
@@ -28,8 +27,8 @@ if [ -f "jpdb-setup.sh" ]
 then
 echo "jpdb-setup.sh file exists"
 else
-wget https://raw.githubusercontent.com/Login2Xplore/jpdb-docker/main/jpdb-setup.sh
-chmod 755 jpdb-setup.sh
+sudo wget https://raw.githubusercontent.com/Login2Xplore/jpdb-docker/main/jpdb-setup.sh
+sudo chmod 755 jpdb-setup.sh
 fi
 
 # login2explore/jpdb032-openjdk8-2gb:1 is the docker-image-name and :1 is the docker-image-version

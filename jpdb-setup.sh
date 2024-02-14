@@ -24,8 +24,8 @@ then
      exit
   fi
 else
-  mkdir $2
-  chmod -R a+rwx $2
+  sudo mkdir $2
+  sudo chmod -R a+rwx $2
   echo "$2 Folder Created"
 fi
 
