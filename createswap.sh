@@ -1,5 +1,5 @@
 # $1 is the size of swap memory ex: 16G
-# Ex at command like with root / admin privilege: 
+# It must be executed in root user or sudo user with sudo password for that user.
 # ./createswap.sh 16G
 
 sudo fallocate -l $1 /swapfile

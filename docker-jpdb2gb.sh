@@ -17,7 +17,7 @@ then
  echo "Port is already in Use. Please use different port."
  exit
 else
- echo "Port is Open for Use"
+ echo "Port is available for Use"
 fi
 
 # The folder is created with name 'jpdb' + port i.e. 'jpdb5577'
@@ -47,16 +47,16 @@ sudo apt-get upgrade
 sudo apt-get install docker-ce docker-ce-cli containerd.io
 sudo docker run hello-world
 
-cd $home
-mkdir $folderName
+cd /opt
+sudo mkdir $folderName
 cd $folderName
 
 if [ -f "jpdb-setup.sh" ]
 then
 echo "jpdb-setup.sh file exists"
 else
-wget https://raw.githubusercontent.com/Login2Xplore/jpdb-docker/main/jpdb-setup.sh
-chmod 755 jpdb-setup.sh
+sudo wget https://raw.githubusercontent.com/Login2Xplore/jpdb-docker/main/jpdb-setup.sh
+sudo chmod 755 jpdb-setup.sh
 fi
 
 # login2explore/jpdb032-openjdk8-2gb:1 is the docker-image-name and :1 is the docker-image-version

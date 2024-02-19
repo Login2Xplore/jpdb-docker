@@ -13,7 +13,7 @@ then
  echo "Port is already in Use. Seems its already running."
  exit
 else
- echo "Port is Open for Use"
+ echo "Port is available for Use"
 fi
 
 folderName="jpdb${1}"
@@ -21,6 +21,14 @@ echo "${folderName}"
 
 cd /opt
 sudo mkdir $folderName
+
+if[ -f "./ssl.jks"]
+then
+ sudo cp ./ssl.jks /opt/${folderName}
+else
+ echo "ssl not found"
+fi
+
 cd $folderName
 
 if [ -f "jpdb-setup.sh" ]

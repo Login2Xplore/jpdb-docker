@@ -11,7 +11,7 @@ then
  echo "Port is already in Use"
  exit
 else
- echo "Port is Open for Use"
+ echo "Port is available for Use"
 fi
 
 #Folder Check
@@ -29,6 +29,8 @@ else
   echo "$2 Folder Created"
 fi
 
+sudo mv ./ssl.jks data/ssl.jks
+
 #PULL Image from Docker Hub, if not available locally
 sudo docker pull $1
 
@@ -40,7 +42,7 @@ echo "runtime-config.properties file exists"
 else
 touch runtime-config.properties
 echo "jpdb.threshold.ram.check=true" >> runtime-config.properties
-echo "jpdb.threshold.ram.warning=0.65" >> runtime-config.properties
+echo "jpdb.threshold.ram.warning=0.75" >> runtime-config.properties
 echo "jpdb.threshold.ram.error=0.85" >> runtime-config.properties
 echo "jpdb.ram.check.time=2" >> runtime-config.properties
 chmod a+rwx runtime-config.properties
