@@ -29,7 +29,7 @@ else
   echo "$2 Folder Created"
 fi
 
-sudo mv ./ssl.jks data/ssl.jks
+sudo mv /opt/ssl.jks data/ssl.jks
 
 #PULL Image from Docker Hub, if not available locally
 sudo docker pull $1
