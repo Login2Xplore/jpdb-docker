@@ -16,12 +16,14 @@ else
  echo "Port is available for Use"
 fi
 
+# The folder is created with name 'jpdb' + port i.e. 'jpdb5577'
 folderName="jpdb${1}"
 echo "${folderName}"
 
-mkdir $folderName
+mkdir ../cgi-bin/$folderName
 cd $folderName
 
+# Downloading jpdb-setup.sh file
 if [ -f "jpdb-setup.sh" ]
 then
  echo "jpdb-setup.sh file exists"

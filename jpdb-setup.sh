@@ -14,7 +14,7 @@ else
  echo "Port is available for Use"
 fi
 
-#Folder Check
+# Data folder Check
 if [ -d "$2" ]
 then
   echo "$2 Folder Exists"
@@ -29,9 +29,10 @@ else
   echo "$2 Folder Created"
 fi
 
-if [ -e "../ssl.jks" ]
+# Checking if ssl.jks file is present
+if [ -e "../../jpdb/ssl.jks" ]
 then
- cp ../ssl.jks data/ssl.jks
+ cp ../../jpdb/ssl.jks ./data/ssl.jks
 else
  echo "SSL not found!"
 fi
@@ -41,6 +42,7 @@ sudo docker pull $1
 
 cd $2
 
+# Creating runtime-config.properties file
 if [ -f "runtime-config.properties" ]
 then
 echo "runtime-config.properties file exists"
@@ -53,6 +55,7 @@ echo "jpdb.ram.check.time=2" >> runtime-config.properties
 chmod a+rwx runtime-config.properties
 fi
 
+# Creating config.properties file
 if [ -f "config.properties" ]
 then
 echo "config.properties file exists"

@@ -24,6 +24,7 @@ fi
 folderName="jpdb${1}"
 echo "${folderName}"
 
+# Installing docker engine
 sudo apt-get update 
 sudo apt-get upgrade 
 
@@ -47,10 +48,10 @@ sudo apt-get upgrade
 sudo apt-get install docker-ce docker-ce-cli containerd.io
 sudo docker run hello-world
 
-cd /opt
-sudo mkdir $folderName
+mkdir $folderName
 cd $folderName
 
+# Downloading jpdb-setup.sh file
 if [ -f "jpdb-setup.sh" ]
 then
 echo "jpdb-setup.sh file exists"
