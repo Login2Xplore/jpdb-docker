@@ -24,12 +24,17 @@ then
      exit
   fi
 else
-  sudo mkdir $2
-  sudo chmod -R a+rwx $2
+  mkdir $2
+  chmod -R a+rwx $2
   echo "$2 Folder Created"
 fi
 
-sudo mv ssl.jks data/ssl.jks
+if [ -e "../ssl.jks" ]
+then
+ cp ../ssl.jks data/ssl.jks
+else
+ echo "SSL not found!"
+fi
 
 #PULL Image from Docker Hub, if not available locally
 sudo docker pull $1
