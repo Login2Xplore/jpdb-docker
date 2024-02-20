@@ -1,7 +1,8 @@
 # $1 dockerImageName
 # $2 data folder for which the volume is to be set from the jpdb data folder running under docker image inside docker container.
 # $3 is port to be explosed from docker container.
-
+# $4 is container real memory
+# $5 is container swap memory
 PORT_CHECK=$(sudo lsof -i -P -n | grep :$3)
 n=${#PORT_CHECK}
 
@@ -82,4 +83,7 @@ fi
 #sudo docker run --restart=always -p $3:$3 -v $(pwd)/:/home/jpdb/data $1 &
 #sudo docker run -p $3:$3 -v $(pwd):/home/jpdb/data $1 &
 # if swap is not enabled in OS then also this command works
-sudo docker run -m 1400m --memory-swap 2800m --restart=on-failure -p $3:$3 -v $(pwd):/home/jpdb/data $1 &
+
+# sudo docker run -m 1400m --memory-swap 2800m --restart=on-failure -p $3:$3 -v $(pwd):/home/jpdb/data $1 &
+
+sudo docker run -m $4 --memory-swap $5 --restart=on-failure -p $3:$3 -v $(pwd):/home/jpdb/data $1 &

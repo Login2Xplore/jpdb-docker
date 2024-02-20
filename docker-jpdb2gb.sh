@@ -48,6 +48,7 @@ sudo apt-get upgrade
 sudo apt-get install docker-ce docker-ce-cli containerd.io
 sudo docker run hello-world
 
+cd ../cgi-bin
 mkdir $folderName
 cd $folderName
 
@@ -62,4 +63,11 @@ fi
 
 # login2explore/jpdb032-openjdk8-2gb:1 is the docker-image-name and :1 is the docker-image-version
 # The following line executes another script i.e. jpdb-setup.sh
-./jpdb-setup.sh login2explore/jpdb032-openjdk8-2gb:1 data $1
+
+#./jpdb-setup.sh login2explore/jpdb032-openjdk8-1gb:1 data $1 700m 1400m
+
+./jpdb-setup.sh login2explore/jpdb032-openjdk8-2gb:1 data $1 1400m 2800m
+
+#./jpdb-setup.sh login2explore/jpdb032-openjdk8-4gb:1 data $1 3200m 6400m
+
+#./jpdb-setup.sh login2explore/jpdb032-openjdk8-8gb:1 data $1 7200m 14400m
