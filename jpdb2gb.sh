@@ -38,8 +38,8 @@ fi
 
 #./jpdb-setup.sh login2explore/jpdb032-openjdk8-1gb:1 data $1 700m 1400m
 
-./jpdb-setup.sh login2explore/jpdb032-openjdk8-2gb:1 data $1 1400m 2800m
+./jpdb-setup.sh login2explore/jpdb032-openjdk8-2gb:1 data $1 1600m 2800m
 
-#./jpdb-setup.sh login2explore/jpdb032-openjdk8-4gb:1 data $1 3200m 6400m
+#./jpdb-setup.sh login2explore/jpdb032-openjdk8-4gb:1 data $1 3600m 6400m
 
-#./jpdb-setup.sh login2explore/jpdb032-openjdk8-8gb:1 data $1 7200m 14400m
+#./jpdb-setup.sh login2explore/jpdb032-openjdk8-8gb:1 data $1 7800m 14400m

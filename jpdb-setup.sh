@@ -3,6 +3,7 @@
 # $3 is port to be explosed from docker container.
 # $4 is container real memory
 # $5 is container swap memory
+# 
 PORT_CHECK=$(sudo lsof -i -P -n | grep :$3)
 n=${#PORT_CHECK}
 
