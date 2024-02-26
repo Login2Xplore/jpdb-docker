@@ -32,4 +32,7 @@ CMD ["nohup", "java", "-Xms640m", "-Xmx1408m", "-XX:+UseG1GC", "-jar", "../bin/j
 # For VPS of 8GB RAM - VPS Swap should 16 GB - Docker memory 7800 and swap 14400 
 # CMD ["nohup", "java", "-Xms3g", "-Xmx7g", "-XX:+UseG1GC", "-jar", "../bin/jpdb.jar"]
 
+# For VPS of 16GB RAM - VPS Swap should 32 GB - Docker memory 16000 and swap 30000 
+# CMD ["nohup", "java", "-Xms7g", "-Xmx15g", "-XX:+UseG1GC", "-jar", "../bin/jpdb.jar"]
+
 EXPOSE 5577
