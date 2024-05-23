@@ -10,7 +10,7 @@ n=${#PORT_CHECK}
 #PORT CHECK, whether a particular port is open or not for use
 if [ $n -ne 0 ]
 then
- echo "Port is already in Use. Seems its already running."
+ echo "Port is already in use, please use different port."
  exit
 else
  echo "Port is available for Use"
@@ -38,8 +38,36 @@ fi
 
 #./jpdb-setup.sh login2explore/jpdb032-openjdk8-1gb:1 data $1 700m 1400m
 
-./jpdb-setup.sh login2explore/jpdb032-openjdk8-2gb:1 data $1 1600m 2800m
+#./jpdb-setup.sh login2explore/jpdb032-openjdk8-2gb:1 data $1 1600m 2800m
 
 #./jpdb-setup.sh login2explore/jpdb032-openjdk8-4gb:1 data $1 3600m 6400m
 
 #./jpdb-setup.sh login2explore/jpdb032-openjdk8-8gb:1 data $1 7800m 14400m
+
+#./jpdb-setup.sh login2explore/jpdb032-openjdk8-16gb:1 data $1 16000m 30000m
+
+
+sizeOfImage = $2
+imageName = $3
+
+if [ "$sizeOfImage" -eq 1 ]; then
+    minSwap=700
+    maxSwap=1400
+elif [ "$sizeOfImage" -eq 2 ]; then
+    minSwap=1600
+    maxSwap=2800
+elif [ "$sizeOfImage" -eq 4 ]; then
+    minSwap=3600
+    maxSwap=6400
+elif [ "$sizeOfImage" -eq 8 ]; then
+    minSwap=7800
+    maxSwap=14400
+elif [ "$sizeOfImage" -eq 16 ]; then
+    minSwap=16000
+    maxSwap=30000
+else
+    echo "Error: Unsupported image size. Supported sizes are 1GB, 2GB, 4GB, 8GB, 16GB."
+    exit 1
+fi
+
+./jpdb-setup.sh $imageName data $1 $minSwap $maxSwap
