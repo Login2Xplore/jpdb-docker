@@ -46,9 +46,11 @@ fi
 
 #./jpdb-setup.sh login2explore/jpdb032-openjdk8-16gb:1 data $1 16000m 30000m
 
+echo "$2"
+echo "$3"
 
-sizeOfImage = $2
-imageName = $3
+sizeOfImage = "$2"
+imageName = "$3"
 
 if [ "$sizeOfImage" -eq 1 ]; then
     minSwap=700
