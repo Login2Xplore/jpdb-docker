@@ -49,8 +49,8 @@ fi
 echo "$2"
 echo "$3"
 
-sizeOfImage = "$2"
-imageName = "$3"
+sizeOfImage=$2
+imageName=$3
 
 if [ "$sizeOfImage" -eq 1 ]; then
     minSwap=700
