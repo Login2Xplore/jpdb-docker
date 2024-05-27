@@ -72,4 +72,7 @@ else
     exit 1
 fi
 
+echo "$minSwap"
+echo "$maxSwap"
+
 ./jpdb-setup.sh $imageName data $1 $minSwap $maxSwap
