@@ -53,20 +53,20 @@ sizeOfImage=$2
 imageName=$3
 
 if [ "$sizeOfImage" -eq 1 ]; then
-    minSwap=700
-    maxSwap=1400
+    minSwap=700m
+    maxSwap=1400m
 elif [ "$sizeOfImage" -eq 2 ]; then
-    minSwap=1600
-    maxSwap=2800
+    minSwap=1600m
+    maxSwap=2800m
 elif [ "$sizeOfImage" -eq 4 ]; then
-    minSwap=3600
-    maxSwap=6400
+    minSwap=3600m
+    maxSwap=6400m
 elif [ "$sizeOfImage" -eq 8 ]; then
-    minSwap=7800
-    maxSwap=14400
+    minSwap=7800m
+    maxSwap=14400m
 elif [ "$sizeOfImage" -eq 16 ]; then
-    minSwap=16000
-    maxSwap=30000
+    minSwap=16000m
+    maxSwap=30000m
 else
     echo "Error: Unsupported image size. Supported sizes are 1GB, 2GB, 4GB, 8GB, 16GB."
     exit 1
