@@ -3,18 +3,6 @@
 # $3 is container real memory
 # $4 is container swap memory
 
-PORT_CHECK=$(sudo lsof -i -P -n | grep :$1)
-n=${#PORT_CHECK}
-
-#PORT CHECK, whether a particular port is open or not for use
-if [ $n -ne 0 ]
-then
- echo "Port is already in Use"
- exit
-else
- echo "Port is available for Use"
-fi
-
 # Data folder Check
 if [ -d "data" ]
 then
