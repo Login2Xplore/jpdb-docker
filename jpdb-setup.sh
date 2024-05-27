@@ -1,10 +1,9 @@
-# $1 dockerImageName
-# $2 data folder for which the volume is to be set from the jpdb data folder running under docker image inside docker container.
-# $3 is port to be explosed from docker container.
-# $4 is container real memory
-# $5 is container swap memory
-# 
-PORT_CHECK=$(sudo lsof -i -P -n | grep :$3)
+# $1 is port to be exposed from docker container.
+# $2 dockerImageName
+# $3 is container real memory
+# $4 is container swap memory
+
+PORT_CHECK=$(sudo lsof -i -P -n | grep :$1)
 n=${#PORT_CHECK}
 
 #PORT CHECK, whether a particular port is open or not for use
@@ -17,18 +16,18 @@ else
 fi
 
 # Data folder Check
-if [ -d "$2" ]
+if [ -d "data" ]
 then
-  echo "$2 Folder Exists"
-  if [ -f "$2/jpdbsys/jpdb.on" ]
+  echo "data Folder Exists"
+  if [ -f "data/jpdbsys/jpdb.on" ]
   then
      echo "Already One Instance is using this Folder. Use another Folder or stop the current JPDB Instance."
      exit
   fi
 else
-  mkdir $2
-  chmod -R a+rwx $2
-  echo "$2 Folder Created"
+  mkdir "data"
+  chmod -R a+rwx "data"
+  echo "data Folder Created"
 fi
 
 # Checking if ssl.jks file is present
@@ -87,4 +86,4 @@ fi
 
 # sudo docker run -m 1400m --memory-swap 2800m --restart=on-failure -p $3:$3 -v $(pwd):/home/jpdb/data $1 &
 
-sudo docker run -m $4 --memory-swap $5 --restart=on-failure -p $3:$3 -v $(pwd):/home/jpdb/data $1 &
+sudo docker run -m $3 --memory-swap $4 --restart=on-failure -p $1:$1 -v $(pwd):/home/jpdb/data $2 &
