@@ -78,7 +78,7 @@ else
 fi
 
 # Download the shell script from GitHub using wget
-wget -O "$jpdb_dir/jpdb2gb.sh" https://raw.githubusercontent.com/Login2Xplore/jpdb-docker/main/jpdb-env.sh
+wget -O "$jpdb_dir/jpdb-env.sh" https://raw.githubusercontent.com/Login2Xplore/jpdb-docker/main/jpdb-env.sh
 
 # Change the permissions of the downloaded shell script to make it executable
 chmod +x "$jpdb_dir/jpdb-env.sh"
