@@ -29,7 +29,7 @@ fi
 #PULL Image from Docker Hub, if not available locally
 sudo docker pull $1
 
-cd $2
+cd "data"
 
 # Creating runtime-config.properties file
 if [ -f "runtime-config.properties" ]
