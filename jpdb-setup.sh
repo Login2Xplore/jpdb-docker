@@ -50,7 +50,7 @@ then
 echo "config.properties file exists"
 else
 touch config.properties
-echo "jpdb.port=$3" >> config.properties
+echo "jpdb.port=$1" >> config.properties
 echo "jpdb.maxThread=128" >> config.properties
 echo "jpdb.corsOrigin=*" >> config.properties
 echo "jpdb.corsMethods=*" >> config.properties
